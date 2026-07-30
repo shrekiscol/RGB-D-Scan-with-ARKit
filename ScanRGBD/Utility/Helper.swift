@@ -34,14 +34,11 @@ extension CVPixelBuffer {
     func convertToUIImage(ciContext: CIContext) -> UIImage? {
         let ciImage = CIImage(cvPixelBuffer: self)
         guard let cgImage = ciContext.createCGImage(ciImage, from: ciImage.extent) else { return nil }
-        
-        let uiImage = UIImage(cgImage: cgImage).rotatedBy(degree: 90, isCropped: false)
-        
-        return uiImage
+        return UIImage(cgImage: cgImage)   // no rotation -- keep native orientation, matching raw depth + camera.intrinsics
     }
 }
 
-extension simd_float3x3: Codable {
+extension simd_float3x3: @retroactive Codable {
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
         try self.init(container.decode([Float3].self))
@@ -52,7 +49,7 @@ extension simd_float3x3: Codable {
     }
 }
 
-extension simd_float4x4: Codable {
+extension simd_float4x4: @retroactive Codable {
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
         try self.init(container.decode([Float4].self))
@@ -122,7 +119,7 @@ func saveImageAsync(uiImage: UIImage, url: URL, format: String = "png") async th
            let image = uiImage.pngData() {
             try image.write(to: url)
         } else if format == "jpg",
-                  let image = uiImage.jpegData(compressionQuality: 0) {
+                  let image = uiImage.jpegData(compressionQuality: 0.9) {
             try image.write(to: url)
         }
     } catch let error {

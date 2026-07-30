@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0717C58F301B04E400000DAE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0717C58E301B04DC00000DAE /* .gitignore */; };
 		491704BA2906DC5A00F5BA18 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491704B92906DC5A00F5BA18 /* Toast.swift */; };
 		4939D2592827DA030052F10C /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4939D2582827DA030052F10C /* Camera.swift */; };
 		4939D25B2828E7D00052F10C /* PointCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4939D25A2828E7D00052F10C /* PointCloud.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0717C58E301B04DC00000DAE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		491704B92906DC5A00F5BA18 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		4939D2582827DA030052F10C /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		4939D25A2828E7D00052F10C /* PointCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointCloud.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		498A76C62816777300665CA3 /* ScanRGBD */ = {
 			isa = PBXGroup;
 			children = (
+				0717C58E301B04DC00000DAE /* .gitignore */,
 				498A76C72816777300665CA3 /* AppDelegate.swift */,
 				498A76C92816777300665CA3 /* SceneDelegate.swift */,
 				498A76CB2816777300665CA3 /* ViewController.swift */,
@@ -199,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0717C58F301B04E400000DAE /* .gitignore in Resources */,
 				498A76D42816777500665CA3 /* LaunchScreen.storyboard in Resources */,
 				498A76D12816777500665CA3 /* Assets.xcassets in Resources */,
 				498A76CF2816777300665CA3 /* Main.storyboard in Resources */,
@@ -380,7 +384,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4L9VBUHJQZ;
+				DEVELOPMENT_TEAM = 66BUNCUKPW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ScanRGBD/Info.plist;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
@@ -411,7 +415,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4L9VBUHJQZ;
+				DEVELOPMENT_TEAM = 66BUNCUKPW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ScanRGBD/Info.plist;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;

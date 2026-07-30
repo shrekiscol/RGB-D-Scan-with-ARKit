@@ -227,7 +227,8 @@ class Renderer: NSObject {
         let confidenceDirectory = root.appendingPathComponent("Confidence", isDirectory: true)
         let parameterDirectory = root.appendingPathComponent("Frame", isDirectory: true)
         
-        let format = "jpg"
+        let format = "jpg"           // used for RGB
+        let confidenceFormat = "png" // confidence is categorical -- must stay lossless
         
         let jsonEncoder = JSONEncoder()
         jsonEncoder.outputFormatting = .prettyPrinted
@@ -237,11 +238,11 @@ class Renderer: NSObject {
             do {
                 let count = delegate.savedFrames
                 let rgbURL = directory.appendingPathComponent("rgb_\(count)").appendingPathExtension(format)
-                let confidenceURL = confidenceDirectory.appendingPathComponent("confidence_\(count)").appendingPathExtension(format)
+                let confidenceURL = confidenceDirectory.appendingPathComponent("confidence_\(count)").appendingPathExtension(confidenceFormat)
                 let parameterURL = parameterDirectory.appendingPathComponent("frame_\(count)").appendingPathExtension("json")
                 
                 try await saveImageAsync(uiImage: capturedUIImage, url: rgbURL, format: format)
-                try await saveImageAsync(uiImage: confidenceMapUIImage, url: confidenceURL, format: format)
+                try await saveImageAsync(uiImage: confidenceMapUIImage, url: confidenceURL, format: confidenceFormat)
                 try await parameters.save(jsonEncoder: jsonEncoder, url: parameterURL)
                 
                 delegate.incrementSavedFrames()
